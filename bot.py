@@ -2,8 +2,6 @@ import telebot
 from telebot import apihelper
 from telebot import types
 
-apihelper.proxy = {'https':'socks5://3pQihGYFQd:RG8DQAdxFp@172.96.139.48:51582'}
-
 token = "1060641346:AAGiBqwe0nh-uD6fNm_y3Ione5831LfBOyc"
 id = "797137132"
 site = "https://qiwi.me/oplataneona22"
