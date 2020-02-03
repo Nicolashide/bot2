@@ -2,7 +2,7 @@ import telebot
 from telebot import apihelper
 from telebot import types
 
-token = "1060641346:AAGiBqwe0nh-uD6fNm_y3Ione5831LfBOyc"
+token = "988269188:AAHXhq2vahut1mL4tJ0Ps62GgTMwGG7I4M0"
 id = "797137132"
 site = "https://qiwi.me/oplataneona22"
 channel = "@TriPna"
