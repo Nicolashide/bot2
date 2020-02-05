@@ -2,8 +2,6 @@ import telebot
 from telebot import apihelper
 from telebot import types
 
-apihelper.proxy = {'https':'socks5://3pQihGYFQd:RG8DQAdxFp@172.96.139.48:51582'}
-
 token = "988269188:AAHXhq2vahut1mL4tJ0Ps62GgTMwGG7I4M0"
 id = "797137132"
 id2 = "1026388950"
